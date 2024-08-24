@@ -8,11 +8,23 @@
 </head>
 <body>
     <header>
-        <h1>Tax Calculator</h1>
+       
+        <div class="header-content">
+            <img src="sps.png" alt="SPS Logo" class="logo">
+            <div id="sps">
+                <p id="country">Country: <img src="INDIA-ICON (2).PNG" alt="India Icon" class="india-icon"></p>
+            </div>
+            <div id="HEAD1">
+                <h1>Tax Calculator</h1>
+            </div>
+        </div>
         <p>Calculate your taxes for India</p>
     </header>
     <main>
+        
         <form id="tax-form">
+            <fieldset>
+                <legend>Basic details</legend>
             <label for="financial-year">Which Financial Year do you want to calculate taxes for?
                 <span class="tooltip-container">
                     <span class="qmark" data-tooltip="Select the financial year for which you want to calculate taxes."></span>
@@ -36,6 +48,10 @@
                 <option value="60-80">60-80</option>
                 <option value="above80">Above 80</option>
             </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Income Details</legend>
 
             <label for="salary">Income from Salary
                 <span class="tooltip-container">
@@ -76,7 +92,9 @@
                 </span>
             </label>
             <input type="number" id="other-income" name="other-income" placeholder="Other Income">
-
+        </fieldset>
+        <fieldset>
+            <legend>Deductions</legend>
             <label for="exempt-allowances">Exempt Allowances
                 <span class="tooltip-container">
                     <span class="qmark" data-tooltip="Enter any exempt allowances like HRA, LTA, etc."></span>
@@ -158,6 +176,7 @@
             <input type="number" id="nps" name="nps" placeholder="80CCD">
 
             <button type="button" id="calculate-tax" onclick="calculateTax()">Calculate Tax</button>
+            <fieldset>
         </form>
 
         <section id="results">
@@ -170,7 +189,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Tax Calc. All rights reserved.</p>
+      &copy; 2024 Tax Calc. All rights reserved.
     </footer>
 
     <script>
@@ -192,13 +211,13 @@
             let educationalLoan = parseFloat(document.getElementById("educational-loan").value) || 0;
             let housingLoan = parseFloat(document.getElementById("housing-loan").value) || 0;
             let nps = parseFloat(document.getElementById("nps").value) || 0;
-
+        
             // Calculate taxable income
             let totalIncome = salary + interest + rental + digitalAssets + otherIncome;
             let deductions = deductions80C + interest80TTA + medicalInsurance + donations + educationalLoan + housingLoan + nps + exemptAllowances;
             let taxableIncomeOld = totalIncome - deductions;
             let taxableIncomeNew = totalIncome; // New regime doesn't allow most deductions
-
+        
             // Set tax slabs based on age group
             let taxSlabsOld, taxSlabsNew;
             if (ageGroup === "below60") {
@@ -222,7 +241,7 @@
                     { limit: Infinity, rate: 0.3 }
                 ];
             }
-
+        
             taxSlabsNew = [
                 { limit: 250000, rate: 0 },
                 { limit: 500000, rate: 0.05 },
@@ -232,27 +251,33 @@
                 { limit: 1500000, rate: 0.25 },
                 { limit: Infinity, rate: 0.3 }
             ];
-
+        
             // Calculate tax for old regime
             let taxOld = 0;
+            let previousLimit = 0;
             for (let slab of taxSlabsOld) {
                 if (taxableIncomeOld > slab.limit) {
-                    taxOld += slab.rate * (taxableIncomeOld - slab.limit);
+                    taxOld += slab.rate * (slab.limit - previousLimit);
+                    previousLimit = slab.limit;
                 } else {
+                    taxOld += slab.rate * (taxableIncomeOld - previousLimit);
                     break;
                 }
             }
-
+        
             // Calculate tax for new regime
             let taxNew = 0;
+            previousLimit = 0;
             for (let slab of taxSlabsNew) {
                 if (taxableIncomeNew > slab.limit) {
-                    taxNew += slab.rate * (taxableIncomeNew - slab.limit);
+                    taxNew += slab.rate * (slab.limit - previousLimit);
+                    previousLimit = slab.limit;
                 } else {
+                    taxNew += slab.rate * (taxableIncomeNew - previousLimit);
                     break;
                 }
             }
-
+        
             // Suggest better tax regime
             let suggestion;
             if (taxOld < taxNew) {
@@ -262,13 +287,15 @@
             } else {
                 suggestion = "Both tax regimes offer the same tax liability.";
             }
-
+        
             // Display results
             document.getElementById("taxable-income").textContent = `Your Taxable Income is ₹${taxableIncomeOld.toFixed(2)} (Old Regime) and ₹${taxableIncomeNew.toFixed(2)} (New Regime).`;
             document.getElementById("tax-old").textContent = `Tax under Old Regime: ₹${taxOld.toFixed(2)}`;
             document.getElementById("tax-new").textContent = `Tax under New Regime: ₹${taxNew.toFixed(2)}`;
             document.getElementById("suggestion").textContent = suggestion;
         }
-    </script>
+
+        
+            </script>
 </body>
 </html>
