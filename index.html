@@ -306,19 +306,19 @@
                                     
                                     <div class="collapse" id="salaryDetails">
                                         
-                                        <label for="gross-salary">Gross Salary (INR)</label>
+                                        <label for="gross-salary">(i)Gross Salary (INR)</label>
                                         <input type="number" id="gross-salary" name="gross-salary" placeholder="e.g., 2413683" />
 
-                                        <label for="exemption-10">Exemption claimed u/s 10 (INR)</label>
+                                        <label for="exemption-10">(ii)Exemption claimed u/s 10 (INR)</label>
                                         <input type="number" id="exemption-10" name="exemption-10" placeholder="e.g., 339062" />
 
-                                        <label for="deduction-16ia">Deduction u/s 16(ia) (INR)</label>
+                                        <label for="deduction-16ia">(iii)Deduction u/s 16(ia) (INR)</label>
                                         <input type="number" id="deduction-16ia" name="deduction-16ia" placeholder="e.g., 50000" />
 
-                                        <label for="deduction-16ii">Deduction u/s 16(ii) (INR)</label>
+                                        <label for="deduction-16ii">(iv)Deduction u/s 16(ii) (INR)</label>
                                         <input type="number" id="deduction-16ii" name="deduction-16ii" placeholder="e.g., 0" />
 
-                                        <label for="deduction-16iii">Deduction u/s 16(iii) (INR)</label>
+                                        <label for="deduction-16iii">(v)Deduction u/s 16(iii) (INR)</label>
                                         <input type="number" id="deduction-16iii" name="deduction-16iii" placeholder="e.g., 0" />
                                     </div>
                                 </fieldset>
@@ -330,10 +330,14 @@
                                         Provide Income in detail
                                     </button>
                                     <div class="collapse" id="housePropertyDetails">
-                                        <label for="income-house-property">Income from House Property (INR)</label>
-                                        <input type="number" id="income-house-property" name="income-house-property" placeholder="Provide Income in detail" />
+                                        <label for="income-self-occupied">Income from Self-occupied Property (INR)</label>
+                                        <input type="number" id="income-self-occupied" name="income-self-occupied" placeholder="Provide Income in detail" />
+                                
+                                        <label for="income-let-out">Income from Let-out Property (INR)</label>
+                                        <input type="number" id="income-let-out" name="income-let-out" placeholder="Provide Income in detail" />
                                     </div>
                                 </fieldset>
+                                
 
                                 <!-- Capital Gains Section -->
                                 <fieldset>
@@ -342,7 +346,7 @@
                                         Provide Income in detail
                                     </button>
                                     <div class="collapse" id="capitalGainsDetails">
-                                        <label for="income-capital-gains">Income from Capital Gains (INR)</label>
+                                        <label for="income-capital-gains">(i)Income from Capital Gains (INR)</label>
                                         <input type="number" id="income-capital-gains" name="income-capital-gains" placeholder="Provide Income in detail" />
                                     </div>
                                 </fieldset>
@@ -354,8 +358,11 @@
                                         Provide Income in detail
                                     </button>
                                     <div class="collapse" id="businessProfessionDetails">
-                                        <label for="income-business-profession">Income from Business or Profession (INR)</label>
-                                        <input type="number" id="income-business-profession" name="income-business-profession" placeholder="Provide Income in detail" />
+                                        <label for="income-44ad">(i)Presumptive Income u/s 44AD,44ADA (INR)</label>
+                                        <input type="number" id="income-44ad" name="income-44ad" placeholder="Provide Income in detail" />
+                                
+                                        <label for="income-other-profession">(ii)Other Income from Business or Profession (INR)</label>
+                                        <input type="number" id="income-other-profession" name="income-other-profession" placeholder="Provide Income in detail" />
                                     </div>
                                 </fieldset>
 
@@ -366,8 +373,28 @@
                                         Provide Income in detail
                                     </button>
                                     <div class="collapse" id="otherSourcesDetails">
-                                        <label for="income-other-sources">Income from Other Sources (INR)</label>
-                                        <input type="number" id="income-other-sources" name="income-other-sources" placeholder="Provide Income in detail" />
+                                        <label for="Interest from Saving’s bank account">(i) Interest from Saving’s bank account   </label>
+                                        <input type="number" id="Interest from Saving’s bank account" name=" Interest from Saving’s bank accoun" placeholder="Provide Income in detail" />
+                                    </div>
+
+                                    <div class="collapse" id="otherSourcesDetails">
+                                        <label for="Other Interest Income"> (ii)Other Interest Income</label>
+                                        <input type="number" id="Other Interest Incomes" name="income-other-sources" placeholder="Provide Income in detail" />
+                                    </div>
+
+                                    <div class="collapse" id="otherSourcesDetails">
+                                        <label for="Winning from Lottery, crossword puzzles etc.s"> (iii)Winning from Lottery, crossword puzzles etc.s</label>
+                                        <input type="number" id="Winning from Lottery, crossword puzzles etc.s" name="Winning from Lottery, crossword puzzles etc.s" placeholder="Provide Income in detail" />
+                                    </div>
+
+                                    <div class="collapse" id="otherSourcesDetails">
+                                        <label for="Any other income">(iv) Any other income</label>
+                                        <input type="number" id=" Any other income" name=" Any other income" placeholder="Provide Income in detail" />
+                                    </div>
+
+                                    <div class="collapse" id="otherSourcesDetails">
+                                        <label for="Income from Other Sources (INR)">Income from Other Sources (INR)</label>
+                                        <input type="number" id="Income from Other Sources (INR)" name="Income from Other Sources (INR)" placeholder="Provide Income in detail" />
                                     </div>
                                 </fieldset>
 
@@ -403,19 +430,19 @@
                                     
                                     <div class="collapse" id="salaryDetails">
                                         
-                                        <label for="gross-salary">Deductions u/s 80C</label>
+                                        <label for="gross-salary">(i)Deductions u/s 80C</label>
                                         <input type="number" id="Deductions u/s 80C" name="Deductions u/s 80C" placeholder="e.g., 2413683" />
 
-                                        <label for="exemption-10">Deduction u/s 80CCC</label>
+                                        <label for="exemption-10">(ii)Deduction u/s 80CCC</label>
                                         <input type="number" id="Deduction u/s 80CCC" name="exemption-10" placeholder="e.g., 339062" />
 
-                                        <label for="deduction-16ia">Deductions u/s 80CCD(1)</label>
+                                        <label for="deduction-16ia">(iii)Deductions u/s 80CCD(1)</label>
                                         <input type="number" id="Deductions u/s 80CCD(1)" name="Deductions u/s 80CCD(1)" placeholder="e.g., 50000" />
 
-                                        <label for="deduction-16ii">Deductions u/s 80CCD (1B)</label>
+                                        <label for="deduction-16ii">(iv)Deductions u/s 80CCD (1B)</label>
                                         <input type="number" id="deduction-16ii" name="deduction-16ii" placeholder="e.g., 0" />
 
-                                        <label for="deduction-16iii">Deductions u/s 80CCD (2)</label>
+                                        <label for="deduction-16iii">(v)Deductions u/s 80CCD (2)</label>
                                         <input type="number" id="deduction-16iii" name="deduction-16iii" placeholder="e.g., 0" />
                                         <fieldset>
                                             
@@ -456,86 +483,85 @@
 
     <script>
      
-            document.getElementById('tax-form').addEventListener('submit', function(event) {
+         
+        document.getElementById('tax-form').addEventListener('submit', function(event) {
             event.preventDefault();
-        
-            // Retrieve values from input fields
-            let grossSalary = parseFloat(document.getElementById('gross-salary').value) || 0;
-            let exemption10 = parseFloat(document.getElementById('exemption-10').value) || 0;
-            let deduction16ia = parseFloat(document.getElementById('deduction-16ia').value) || 0;
-            let deduction16ii = parseFloat(document.getElementById('deduction-16ii').value) || 0;
-            let deduction16iii = parseFloat(document.getElementById('deduction-16iii').value) || 0;
-            let incomeHouseProperty = parseFloat(document.getElementById('income-house-property').value) || 0;
-            let incomeCapitalGains = parseFloat(document.getElementById('income-capital-gains').value) || 0;
-            let incomeBusinessProfession = parseFloat(document.getElementById('income-business-profession').value) || 0;
-            let incomeOtherSources = parseFloat(document.getElementById('income-other-sources').value) || 0;
-            let taxRegime = document.getElementById('tax-regime').value;
-            
-            // Calculate Gross Total Income
-            let grossTotalIncome = grossSalary - (exemption10 + deduction16ia + deduction16ii + deduction16iii) 
-                                   + incomeHouseProperty + incomeCapitalGains 
-                                   + incomeBusinessProfession + incomeOtherSources;
-            
-            // Calculate Tax
-            let tax = calculateTax(grossTotalIncome, taxRegime);
-            let suggestion = suggestTaxRegime(grossTotalIncome, taxRegime);
-            
-            // Display results
-            document.getElementById('gross-total-income').innerText = `₹${grossTotalIncome.toFixed(2)}`;
-            document.getElementById('suggestion').innerText = `Your calculated tax is: ₹${tax.toFixed(2)}. ${suggestion}`;
-        });
-        
-        function calculateTax(income, regime) {
+
+            // Retrieve form values
+            const financialYear = document.getElementById('financial-year').value;
+            const age = document.getElementById('age').value;
+            const taxRegime = document.getElementById('tax-regime').value;
+
+            // Income fields
+            const grossSalary = parseFloat(document.getElementById('gross-salary').value) || 0;
+            const exemption10 = parseFloat(document.getElementById('exemption-10').value) || 0;
+            const deduction16ia = parseFloat(document.getElementById('deduction-16ia').value) || 0;
+            const deduction16ii = parseFloat(document.getElementById('deduction-16ii').value) || 0;
+            const deduction16iii = parseFloat(document.getElementById('deduction-16iii').value) || 0;
+
+            const incomeSelfOccupied = parseFloat(document.getElementById('income-self-occupied').value) || 0;
+            const incomeLetOut = parseFloat(document.getElementById('income-let-out').value) || 0;
+
+            const capitalGains = parseFloat(document.getElementById('income-capital-gains').value) || 0;
+
+            const income44ad = parseFloat(document.getElementById('income-44ad').value) || 0;
+            const incomeOtherProfession = parseFloat(document.getElementById('income-other-profession').value) || 0;
+
+            const otherInterestIncome = parseFloat(document.getElementById('Other Interest Incomes').value) || 0;
+            const winningFromLottery = parseFloat(document.getElementById('Winning from Lottery, crossword puzzles etc.s').value) || 0;
+            const anyOtherIncome = parseFloat(document.getElementById(' Any other income').value) || 0;
+            const incomeFromOtherSources = parseFloat(document.getElementById('Income from Other Sources (INR)').value) || 0;
+
+            // Deductions
+            const deduction80C = parseFloat(document.getElementById('Deductions u/s 80C').value) || 0;
+            const deduction80CCC = parseFloat(document.getElementById('Deduction u/s 80CCC').value) || 0;
+            const deduction80CCD1 = parseFloat(document.getElementById('Deductions u/s 80CCD(1)').value) || 0;
+            const deduction80CCD1B = parseFloat(document.getElementById('deduction-16ii').value) || 0;
+            const deduction80CCD2 = parseFloat(document.getElementById('deduction-16iii').value) || 0;
+
+            // Calculate gross total income
+            const grossTotalIncome = grossSalary - exemption10 - deduction16ia - deduction16ii - deduction16iii
+                                    + incomeSelfOccupied + incomeLetOut
+                                    + capitalGains
+                                    + income44ad + incomeOtherProfession
+                                    + otherInterestIncome + winningFromLottery + anyOtherIncome + incomeFromOtherSources;
+
+            document.getElementById('gross-total-income').innerText = grossTotalIncome.toFixed(2);
+
+            // Tax calculation logic (example, adjust as per actual tax rules)
+            let taxableIncome = grossTotalIncome - (deduction80C + deduction80CCC + deduction80CCD1 + deduction80CCD1B + deduction80CCD2);
             let tax = 0;
-            if (regime === 'old-regime') {
-                if (income > 250000) {
-                    tax = (income - 250000) * 0.1;
+
+            if (taxRegime === 'old-regime') {
+                // Old regime tax calculation logic (example, adjust as per actual tax rules)
+                if (taxableIncome <= 250000) {
+                    tax = 0;
+                } else if (taxableIncome <= 500000) {
+                    tax = (taxableIncome - 250000) * 0.05;
+                } else if (taxableIncome <= 1000000) {
+                    tax = 12500 + (taxableIncome - 500000) * 0.1;
+                } else {
+                    tax = 112500 + (taxableIncome - 1000000) * 0.3;
                 }
-                if (income > 500000) {
-                    tax = 25000 + (income - 500000) * 0.2;
-                }
-                if (income > 1000000) {
-                    tax = 125000 + (income - 1000000) * 0.3;
-                }
-            } else if (regime === 'new-regime') {
-                if (income > 250000) {
-                    tax = (income - 250000) * 0.05;
-                }
-                if (income > 500000) {
-                    tax = 12500 + (income - 500000) * 0.1;
-                }
-                if (income > 750000) {
-                    tax = 62500 + (income - 750000) * 0.15;
-                }
-                if (income > 1000000) {
-                    tax = 137500 + (income - 1000000) * 0.2;
-                }
-                if (income > 1250000) {
-                    tax = 237500 + (income - 1250000) * 0.25;
-                }
-                if (income > 1500000) {
-                    tax = 362500 + (income - 1500000) * 0.3;
-                }
-            }
-            return tax;
-        }
-        
-        function suggestTaxRegime(income, regime) {
-            // Simple comparison between regimes
-            let oldRegimeTax = calculateTax(income, 'old-regime');
-            let newRegimeTax = calculateTax(income, 'new-regime');
-            
-            let suggestion = '';
-            if (regime === 'old-regime' && oldRegimeTax < newRegimeTax) {
-                suggestion = 'The Old Regime is better for you based on your income.';
-            } else if (regime === 'new-regime' && newRegimeTax < oldRegimeTax) {
-                suggestion = 'The New Regime is better for you based on your income.';
             } else {
-                suggestion = 'Based on your income, both regimes have similar tax implications.';
+                // New regime tax calculation logic (example, adjust as per actual tax rules)
+                if (taxableIncome <= 250000) {
+                    tax = 0;
+                } else if (taxableIncome <= 500000) {
+                    tax = (taxableIncome - 250000) * 0.05;
+                } else if (taxableIncome <= 750000) {
+                    tax = 12500 + (taxableIncome - 500000) * 0.1;
+                } else if (taxableIncome <= 1000000) {
+                    tax = 37500 + (taxableIncome - 750000) * 0.15;
+                } else {
+                    tax = 75000 + (taxableIncome - 1000000) * 0.2;
+                }
             }
-            return suggestion;
-        }
-                        
-                    </script>
-                </body>
-                </html>
+            
+            
+
+            document.getElementById('suggestion').innerText = `Estimated Tax: ₹${tax.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>
