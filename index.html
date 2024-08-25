@@ -387,11 +387,11 @@
                                         <input type="number" id="Winning from Lottery, crossword puzzles etc.s" name="Winning from Lottery, crossword puzzles etc.s" placeholder="Provide Income in detail" />
                                     </div>
 
-                                  
+                                   
 
                                     <div class="collapse" id="otherSourcesDetails">
-                                        <label for="Income from Other Sources (INR)">(iv)Income from Other Sources</label>
-                                        <input type="number" id="Income from Other Sources " name="Income from Other Sources (INR)" placeholder="Provide Income in detail" />
+                                        <label for="Income from Other Sources">Income from Other Sources (INR)</label>
+                                        <input type="number" id="Income from Other Sources" name="Income from Other Sources" placeholder="Provide Income in detail" />
                                     </div>
                                 </fieldset>
 
@@ -506,10 +506,8 @@
 
             const otherInterestIncome = parseFloat(document.getElementById('Other Interest Incomes').value) || 0;
             const winningFromLottery = parseFloat(document.getElementById('Winning from Lottery, crossword puzzles etc.s').value) || 0;
-        
-            
-            
-            const incomeFromOtherSources = parseFloat(document.getElementById('Income from Other Sources (INR)').value) || 0;
+           
+            const incomeFromOtherSources = parseFloat(document.getElementById('Income from Other Sources').value) || 0;
 
             // Deductions
             const deduction80C = parseFloat(document.getElementById('Deductions u/s 80C').value) || 0;
@@ -523,7 +521,7 @@
                                     + incomeSelfOccupied + incomeLetOut
                                     + capitalGains
                                     + income44ad + incomeOtherProfession
-                                    + otherInterestIncome + winningFromLottery + anyOtherIncome + incomeFromOtherSources;
+                                    + otherInterestIncome + winningFromLottery + incomeFromOtherSources;
 
             document.getElementById('gross-total-income').innerText = grossTotalIncome.toFixed(2);
 
@@ -560,6 +558,8 @@
             
 
             document.getElementById('suggestion').innerText = `Estimated Tax: ₹${tax.toFixed(2)}`;
+
+            
         });
     </script>
 </body>
