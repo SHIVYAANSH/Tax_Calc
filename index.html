@@ -461,7 +461,7 @@
                                         <label for="deduction-16iii">(v)Deductions u/s 80CCD (2)</label>
                                         <input type="number" id="deduction-16iii" name="deduction-16iii" placeholder="e.g., 0" />
                                         <fieldset>
-                                            <label for="Standard-Deduction">Standard Deduction</label>
+                                            <label for="Standard-Deduction">Total Deduction</label>
                                             <div id="Total Deduction"></div>
                                         </div>
                                         </fieldset>
@@ -475,6 +475,14 @@
                         </div>
                     </div>
                 </div>
+
+                <fieldset>
+                    <fieldset>
+                        <label for="Standard-Deduction">Taxable Income</label>
+                                            <div id="Taxable Income"></div>
+                    </fieldset>
+                
+                
                
                 <button type="submit">Calculate Tax</button>
                 <div id="suggestion"></div>
@@ -542,11 +550,14 @@
             // Tax calculation logic (example, adjust as per actual tax rules)
             let taxableIncome = grossTotalIncome - (standard_deduction+ deduction80C+ deduction80CCC + deduction80CCD1 + deduction80CCD1B + deduction80CCD2);
             let taxable_old = grossTotalIncome -standard_deduction
+
+            const Taxable_Income=grossTotalIncome-Total_Deduction;
             
             let tax = 0;
 
             if (taxRegime === 'old-regime') {
                 document.getElementById('Total Deduction').innerText = Total_Deduction.toFixed(2);
+                document.getElementById('Taxable Income').innerText = taxableIncome.toFixed(2);
                 // Old regime tax calculation logic (example, adjust as per actual tax rules)
                 if (taxable_old <= 250000) {
                     tax = 0;
@@ -559,6 +570,12 @@
                 }
             } else {
                 document.getElementById('Total Deduction').innerText = zero_deduction.toFixed(2);
+                const Taxable_Income_New_Regime=grossTotalIncome;
+                document.getElementById('Taxable Income').innerText = Taxable_Income_New_Regime.toFixed(2);
+                if (grossSalary===0){
+                    const zero=0;
+                    document.getElementById(Taxable_Income).innerText=zero.toFixed(2);
+                }
 
                 
                 // New regime tax calculation logic (example, adjust as per actual tax rules)
@@ -575,7 +592,7 @@
                 }
             }
             
-            
+       
 
             document.getElementById('suggestion').innerText = `Estimated Tax: ₹${tax.toFixed(2)}`;
 
@@ -584,4 +601,3 @@
     </script>
 </body>
 </html>
-
