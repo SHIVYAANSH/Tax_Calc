@@ -387,14 +387,11 @@
                                         <input type="number" id="Winning from Lottery, crossword puzzles etc.s" name="Winning from Lottery, crossword puzzles etc.s" placeholder="Provide Income in detail" />
                                     </div>
 
-                                    <div class="collapse" id="otherSourcesDetails">
-                                        <label for="Any other income">(iv) Any other income</label>
-                                        <input type="number" id=" Any other income" name=" Any other income" placeholder="Provide Income in detail" />
-                                    </div>
+                                  
 
                                     <div class="collapse" id="otherSourcesDetails">
-                                        <label for="Income from Other Sources (INR)">Income from Other Sources (INR)</label>
-                                        <input type="number" id="Income from Other Sources (INR)" name="Income from Other Sources (INR)" placeholder="Provide Income in detail" />
+                                        <label for="Income from Other Sources (INR)">(iv)Income from Other Sources</label>
+                                        <input type="number" id="Income from Other Sources " name="Income from Other Sources (INR)" placeholder="Provide Income in detail" />
                                     </div>
                                 </fieldset>
 
@@ -509,7 +506,9 @@
 
             const otherInterestIncome = parseFloat(document.getElementById('Other Interest Incomes').value) || 0;
             const winningFromLottery = parseFloat(document.getElementById('Winning from Lottery, crossword puzzles etc.s').value) || 0;
-            const anyOtherIncome = parseFloat(document.getElementById(' Any other income').value) || 0;
+        
+            
+            
             const incomeFromOtherSources = parseFloat(document.getElementById('Income from Other Sources (INR)').value) || 0;
 
             // Deductions
