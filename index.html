@@ -503,9 +503,11 @@ legend {
                 
                
                 <button type="submit">Calculate Tax</button>
+                    <hr></hr>
                 <div id="Total-Tax"></div>
                 <div id="Advance"></div>
                 <div id="Net"></div>
+                    <hr></hr>
 
                 
             </div>
@@ -665,7 +667,7 @@ document.getElementById('Deductions u/s 80CCD (2)').addEventListener('input', up
            document.getElementById('Total-Tax').innerText = `Total Tax: ₹${tax.toFixed(2)}`;
            
            // Display the total tax payable
-           document.getElementById('Net').innerText = `Total Tax Payable/Refundable: ₹${totalTaxPayable.toFixed(2)}`;
+           document.getElementById('Net').innerText = `Net Tax Payable/Refundable: ₹${totalTaxPayable.toFixed(2)}`;
        }
        
        // Attach event listeners
