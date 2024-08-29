@@ -7,229 +7,245 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <title>Tax Calculator - Tax Calc</title>
     <link rel="stylesheet" href="styles.css">
-    
+    <link rel="icon" href="favicon-32x32.png" type="image/png">
+
+
     <style>
-        /* ... (same as your existing styles) ... */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #fff9c4;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            position: relative;
-        }
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .site-title {
-            font-size: 1.5rem;
-            margin: 0;
-        }
-        .tagline {
-            font-size: 1rem;
-            margin: 0;
-        }
-        .header-logo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        .logo {
-            width: 100px;
-            height: auto;
-            margin-right: 20px;
-        }
-        #country {
-            font-size: 1.2rem;
-            color: black;
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        .india-icon {
-            width: 20px;
-            height: 20px;
-            margin-left: 5px;
-            vertical-align: middle;
-        }
-        h1 {
-            font-size: 2rem;
-            color: black;
-            margin: 0;
-        }
-        p {
-            font-size: 1rem;
-            color: black;
-            margin: 0;
-        }
-        #HEAD1, #HEAD2 {
-            text-align: center;
-        }
-        #sps {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            display: flex;
-            align-items: center;
-        }
-        #sps p {
-            margin: 0;
-        }
-        #HEAD1 {
-            margin-top: 0;
-        }
-        #HEAD2 {
-            margin-top: 0.5rem;
-        }
-        main {
-            padding: 2rem;
-            max-width: 800px;
-            margin: 2rem auto;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            margin-top: 0;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            position: relative;
-        }
-        input, select {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1.5rem;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 0.75rem;
-            text-align: right;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        #suggestion {
-            margin-top: 1.5rem;
-            font-weight: bold;
-        }
-        .tooltip-container {
-            position: relative;
-            display: inline-block;
-        }
-        .qmark {
-            cursor: pointer;
-            font-size: 1.2rem;
-            color: #007bff;
-            margin-left: 0.5rem;
-        }
-        .tooltip {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            color: #fff;
-            padding: 0.5rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            z-index: 1000;
-            bottom: 125%;
-            left: 50%;
-            transform: translateX(-50%);
-            white-space: nowrap;
-        }
-        .tooltip::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 5px;
-            border-style: solid;
-            border-color: #333 transparent transparent transparent;
-        }
-        .tooltip-container:hover .tooltip {
-            display: block;
-        }
-        footer {
-            background-color: #fff9c4;
-            color: black;
-            text-align: center;
-            padding: 1rem;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        fieldset {
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
-        legend {
-            font-weight: bold;
-            padding: 0 10px;
-            color: #333;
-        }
-        .input-group {
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-        
-        .input-group .rupee-symbol {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1rem;
-            pointer-events: none;
-        }
-        
-        .input-group input {
-            padding-left: 20px; /* Adjust padding to make space for the rupee symbol */
-            width: calc(100% - 20px);
-            box-sizing: border-box;
-        }
+         /* ... (same as your existing styles) ... */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    background-color: #fff9c4;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.site-title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+.tagline {
+    font-size: 1rem;
+    margin: 0;
+}
+.header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.logo {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+#country {
+    font-size: 1.2rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.india-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+h1 {
+    font-size: 2rem;
+    color: black;
+    margin: 0;
+}
+p {
+    font-size: 1rem;
+    color: black;
+    margin: 0;
+}
+#HEAD1, #HEAD2 {
+    text-align: center;
+}
+#sps {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+}
+#sps p {
+    margin: 0;
+}
+#HEAD1 {
+    margin-top: 0;
+}
+#HEAD2 {
+    margin-top: 0.5rem;
+}
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    margin-top: 0;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    position: relative;
+}
+input, select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #0056b3;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 0.75rem;
+    text-align: right;
+}
+th {
+    background-color: #f4f4f4;
+}
+#Total-Tax {
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+
+#Advance {
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+
+#Net {
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+.qmark {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-left: 0.5rem;
+}
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+.tooltip-container:hover .tooltip {
+    display: block;
+}
+footer {
+    background-color: #fff9c4;
+    color: black;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+fieldset {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #333;
+}
+.input-group {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.input-group .rupee-symbol {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.input-group input {
+    padding-left: 20px; /* Adjust padding to make space for the rupee symbol */
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+}
+
+
     </style>
+    
+   
 </head>
 <body>
     <header>
@@ -487,8 +503,9 @@
                 
                
                 <button type="submit">Calculate Tax</button>
-                <div id="suggestion">Estimated Tax:₹0.00</div>
-                <p id="Total Tax Payable"><b>Total Tax Payable: ₹0.00</b></p>
+                <div id="Total-Tax"></div>
+                <div id="Advance"></div>
+                <div id="Net"></div>
 
                 
             </div>
@@ -500,71 +517,14 @@
         <p>&copy; 2024 Tax Calc. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Standard Deduction
-const standardDeduction = 50000;
+    <script >
+               // Standard Deduction
+       const standardDeduction = 50000;
 
-// Function to calculate total deductions
+       // Function to calculate total deductions
+     // Function to calculate total deductions
 function updateTotalDeductions() {
-    // Retrieve the current values of the deduction fields
-    const deduction80C = parseFloat(document.getElementById('Deductions u/s 80C').value) || 0;
-    const deduction80CCC = parseFloat(document.getElementById('Deduction u/s 80CCC').value) || 0;
-    const deduction80CCD1 = parseFloat(document.getElementById('Deductions u/s 80CCD(1)').value) || 0;
-    const deduction80CCD1B = parseFloat(document.getElementById('Deductions u/s 80CCD (1B)').value) || 0;
-    const deduction80CCD2 = parseFloat(document.getElementById('Deductions u/s 80CCD (2)').value) || 0;
-
-    // Calculate the total deductions
-    const totalDeductions = standardDeduction + deduction80C + deduction80CCC + deduction80CCD1 + deduction80CCD1B + deduction80CCD2;
-
-    // Update the Total Deduction field in the HTML
-    document.getElementById('Total Deduction').innerText = totalDeductions.toFixed(2);
-}
-
-// Function to update taxable income
-function updateTaxableIncome() {
-    // Retrieve form values
-    const grossSalary = parseFloat(document.getElementById('gross-salary').value) || 0;
-    const exemption10 = parseFloat(document.getElementById('exemption-10').value) || 0;
-    const deduction16ia = parseFloat(document.getElementById('deduction-16ia').value) || 0;
-    const deduction16ii = parseFloat(document.getElementById('deduction-16ii').value) || 0;
-    const deduction16iii = parseFloat(document.getElementById('deduction-16iii').value) || 0;
-    const incomeSelfOccupied = parseFloat(document.getElementById('income-self-occupied').value) || 0;
-    const incomeLetOut = parseFloat(document.getElementById('income-let-out').value) || 0;
-    const capitalGains = parseFloat(document.getElementById('income-capital-gains').value) || 0;
-    const income44ad = parseFloat(document.getElementById('income-44ad').value) || 0;
-    const incomeOtherProfession = parseFloat(document.getElementById('income-other-profession').value) || 0;
-    const BankIncome = parseFloat(document.getElementById('Interest from Saving’s bank account').value) || 0;
-
-    const otherInterestIncome = parseFloat(document.getElementById('Other Interest Incomes').value) || 0;
-
-    const winningFromLottery = parseFloat(document.getElementById('Winning from Lottery, crossword puzzles etc.s').value) || 0;
-    const incomeFromOtherSources = parseFloat(document.getElementById('Income from Other Sources').value) || 0;
-
-    // Calculate gross total income
-    const grossTotalIncome = grossSalary - exemption10 - deduction16ia - deduction16ii - deduction16iii
-                            + incomeSelfOccupied + incomeLetOut
-                            + capitalGains
-                            + income44ad + incomeOtherProfession+BankIncome+ otherInterestIncome + winningFromLottery + incomeFromOtherSources;
-
-    document.getElementById('gross-total-income').innerText = grossTotalIncome.toFixed(2);
-
-    // Retrieve the total deductions
-    const totalDeductions = parseFloat(document.getElementById('Total Deduction').innerText) || 0;
-
-    // Calculate taxable income
-    let taxableIncome;
-    const taxRegime = document.getElementById('tax-regime').value;
-    if (taxRegime === 'old-regime') {
-        taxableIncome = grossTotalIncome - totalDeductions;
-    } else {
-        taxableIncome = grossTotalIncome - standardDeduction;
-    }
-
-    document.getElementById('Taxable Income').innerText = taxableIncome.toFixed(2);
-}
-
-// Function to disable or enable deduction input fields
-function toggleDeductions(disable) {
+    // Array of deduction IDs and corresponding elements
     const deductionIds = [
         'Deductions u/s 80C',
         'Deduction u/s 80CCC',
@@ -573,86 +533,172 @@ function toggleDeductions(disable) {
         'Deductions u/s 80CCD (2)'
     ];
     
-    deductionIds.forEach(id => {
-        document.getElementById(id).disabled = disable;
-    });
-}
-
-// Function to calculate tax and update the suggestion
-function calculateTax(event) {
-    event.preventDefault();
-
-    // Retrieve taxable income
-    const taxableIncome = parseFloat(document.getElementById('Taxable Income').innerText) || 0;
-
-    // Calculate tax based on the regime
-    let tax = 0;
-    const taxRegime = document.getElementById('tax-regime').value;
-
-    if (taxRegime === 'old-regime') {
-        if (taxableIncome <= 250000) {
-            tax = 0;
-        } else if (taxableIncome <= 500000) {
-            tax = (taxableIncome - 250000) * 0.05;
-        } else if (taxableIncome <= 1000000) {
-            tax = 12500 + (taxableIncome - 500000) * 0.1;
-        } else {
-            tax = 12500 + 50000 + (taxableIncome - 1000000) * 0.3;
-        }
-    } else {
-        if (taxableIncome <= 250000) {
-            tax = 0;
-        } else if (taxableIncome <= 500000) {
-            tax = (taxableIncome - 250000) * 0.05;
-        } else if (taxableIncome <= 750000) {
-            tax = 12500 + (taxableIncome - 500000) * 0.1;
-        } else if (taxableIncome <= 1000000) {
-            tax = 12500 + 25000 + (taxableIncome - 750000) * 0.15;
-        } else {
-            tax = 12500 + 25000 + 50000 + (taxableIncome - 1000000) * 0.2;
-        }
-    }
-
-    // Calculate cess (4% of the calculated tax)
-    const cess = tax * 0.04;
-    const totalTaxPayable = tax + cess;
-
-    // Update the suggestion with the estimated tax
-    document.getElementById('suggestion').innerText = `Estimated Tax: ₹${tax.toFixed(2)}`;
+    // Maximum allowable deduction
+    const maxDeduction = 150000;
     
-    // Display the total tax payable
-    document.getElementById('Total Tax Payable').innerText = `Total Tax Payable: ₹${totalTaxPayable.toFixed(2)}`;
+    let totalDeductions = standardDeduction;
+
+    // Loop through each deduction field to apply the maximum limit and calculate total
+    deductionIds.forEach(id => {
+        const element = document.getElementById(id);
+        let deductionValue = parseFloat(element.value) || 0;
+        
+        // Apply the maximum limit
+        if (deductionValue > maxDeduction) {
+            deductionValue = maxDeduction;
+            element.value = maxDeduction; // Update the input field to the max value
+        }
+        
+        // Add to total deductions
+        totalDeductions += deductionValue;
+    });
+
+    // Update the Total Deduction field in the HTML
+    document.getElementById('Total Deduction').innerText = totalDeductions.toFixed(2);
 }
 
-// Attach event listeners
+// Attach event listeners for each deduction field
 document.getElementById('Deductions u/s 80C').addEventListener('input', updateTotalDeductions);
 document.getElementById('Deduction u/s 80CCC').addEventListener('input', updateTotalDeductions);
 document.getElementById('Deductions u/s 80CCD(1)').addEventListener('input', updateTotalDeductions);
 document.getElementById('Deductions u/s 80CCD (1B)').addEventListener('input', updateTotalDeductions);
 document.getElementById('Deductions u/s 80CCD (2)').addEventListener('input', updateTotalDeductions);
-document.getElementById('gross-salary').addEventListener('input', updateTaxableIncome);
-document.getElementById('exemption-10').addEventListener('input', updateTaxableIncome);
-document.getElementById('deduction-16ia').addEventListener('input', updateTaxableIncome);
-document.getElementById('deduction-16ii').addEventListener('input', updateTaxableIncome);
-document.getElementById('deduction-16iii').addEventListener('input', updateTaxableIncome);
-document.getElementById('income-self-occupied').addEventListener('input', updateTaxableIncome);
-document.getElementById('income-let-out').addEventListener('input', updateTaxableIncome);
-document.getElementById('income-capital-gains').addEventListener('input', updateTaxableIncome);
-document.getElementById('income-44ad').addEventListener('input', updateTaxableIncome);
-document.getElementById('income-other-profession').addEventListener('input', updateTaxableIncome);
-document.getElementById('Other Interest Incomes').addEventListener('input', updateTaxableIncome);
-document.getElementById('Winning from Lottery, crossword puzzles etc.s').addEventListener('input', updateTaxableIncome);
-document.getElementById('Income from Other Sources').addEventListener('input', updateTaxableIncome);
-document.getElementById('tax-regime').addEventListener('change', function() {
-    const taxRegime = this.value;
-    if (taxRegime === 'new-regime') {
-        toggleDeductions(true);
-    } else {
-        toggleDeductions(false);
-    }
-    updateTaxableIncome();  // Update taxable income when regime changes
-});
-document.getElementById('tax-form').addEventListener('submit', calculateTax);
+       
+       // Function to update taxable income
+       function updateTaxableIncome() {
+           // Retrieve form values
+           const grossSalary = parseFloat(document.getElementById('gross-salary').value) || 0;
+           const exemption10 = parseFloat(document.getElementById('exemption-10').value) || 0;
+           const deduction16ia = parseFloat(document.getElementById('deduction-16ia').value) || 0;
+           const deduction16ii = parseFloat(document.getElementById('deduction-16ii').value) || 0;
+           const deduction16iii = parseFloat(document.getElementById('deduction-16iii').value) || 0;
+           const incomeSelfOccupied = parseFloat(document.getElementById('income-self-occupied').value) || 0;
+           const incomeLetOut = parseFloat(document.getElementById('income-let-out').value) || 0;
+           const capitalGains = parseFloat(document.getElementById('income-capital-gains').value) || 0;
+           const income44ad = parseFloat(document.getElementById('income-44ad').value) || 0;
+           const incomeOtherProfession = parseFloat(document.getElementById('income-other-profession').value) || 0;
+           const BankIncome = parseFloat(document.getElementById('Interest from Saving’s bank account').value) || 0;
+       
+           const otherInterestIncome = parseFloat(document.getElementById('Other Interest Incomes').value) || 0;
+       
+           const winningFromLottery = parseFloat(document.getElementById('Winning from Lottery, crossword puzzles etc.s').value) || 0;
+           const incomeFromOtherSources = parseFloat(document.getElementById('Income from Other Sources').value) || 0;
+       
+           // Calculate gross total income
+           const grossTotalIncome = grossSalary - exemption10 - deduction16ia - deduction16ii - deduction16iii
+                                   + incomeSelfOccupied + incomeLetOut
+                                   + capitalGains
+                                   + income44ad + incomeOtherProfession+BankIncome+ otherInterestIncome + winningFromLottery + incomeFromOtherSources;
+       
+           document.getElementById('gross-total-income').innerText = grossTotalIncome.toFixed(2);
+       
+           // Retrieve the total deductions
+           const totalDeductions = parseFloat(document.getElementById('Total Deduction').innerText) || 0;
+       
+           // Calculate taxable income
+           let taxableIncome;
+           const taxRegime = document.getElementById('tax-regime').value;
+           if (taxRegime === 'old-regime') {
+               taxableIncome = grossTotalIncome - totalDeductions;
+           } else {
+               taxableIncome = grossTotalIncome - standardDeduction;
+           }
+       
+           document.getElementById('Taxable Income').innerText = taxableIncome.toFixed(2);
+       }
+       
+       // Function to disable or enable deduction input fields
+       function toggleDeductions(disable) {
+           const deductionIds = [
+               'Deductions u/s 80C',
+               'Deduction u/s 80CCC',
+               'Deductions u/s 80CCD(1)',
+               'Deductions u/s 80CCD (1B)',
+               'Deductions u/s 80CCD (2)'
+           ];
+           
+           deductionIds.forEach(id => {
+               document.getElementById(id).disabled = disable;
+           });
+       }
+       
+       // Function to calculate tax and update the suggestion
+       function calculateTax(event) {
+           event.preventDefault();
+       
+           // Retrieve taxable income
+           const taxableIncome = parseFloat(document.getElementById('Taxable Income').innerText) || 0;
+       
+           // Calculate tax based on the regime
+           let tax = 0;
+           const taxRegime = document.getElementById('tax-regime').value;
+       
+           if (taxRegime === 'old-regime') {
+               if (taxableIncome <= 250000) {
+                   tax = 0;
+               } else if (taxableIncome <= 500000) {
+                   tax = (taxableIncome - 250000) * 0.05;
+               } else if (taxableIncome <= 1000000) {
+                   tax = 12500 + (taxableIncome - 500000) * 0.1;
+               } else {
+                   tax = 12500 + 50000 + (taxableIncome - 1000000) * 0.3;
+               }
+           } else {
+               if (taxableIncome <= 250000) {
+                   tax = 0;
+               } else if (taxableIncome <= 500000) {
+                   tax = (taxableIncome - 250000) * 0.05;
+               } else if (taxableIncome <= 750000) {
+                   tax = 12500 + (taxableIncome - 500000) * 0.1;
+               } else if (taxableIncome <= 1000000) {
+                   tax = 12500 + 25000 + (taxableIncome - 750000) * 0.15;
+               } else {
+                   tax = 12500 + 25000 + 50000 + (taxableIncome - 1000000) * 0.2;
+               }
+           }
+       
+           // Calculate cess (4% of the calculated tax)
+           const cess = tax * 0.04;
+           const totalTaxPayable = tax + cess;
+       
+           // Update the suggestion with the estimated tax
+           document.getElementById('Total-Tax').innerText = `Total Tax: ₹${tax.toFixed(2)}`;
+           
+           // Display the total tax payable
+           document.getElementById('Net').innerText = `Total Tax Payable/Refundable: ₹${totalTaxPayable.toFixed(2)}`;
+       }
+       
+       // Attach event listeners
+       document.getElementById('Deductions u/s 80C').addEventListener('input', updateTotalDeductions);
+       document.getElementById('Deduction u/s 80CCC').addEventListener('input', updateTotalDeductions);
+       document.getElementById('Deductions u/s 80CCD(1)').addEventListener('input', updateTotalDeductions);
+       document.getElementById('Deductions u/s 80CCD (1B)').addEventListener('input', updateTotalDeductions);
+       document.getElementById('Deductions u/s 80CCD (2)').addEventListener('input', updateTotalDeductions);
+       document.getElementById('gross-salary').addEventListener('input', updateTaxableIncome);
+       document.getElementById('exemption-10').addEventListener('input', updateTaxableIncome);
+       document.getElementById('deduction-16ia').addEventListener('input', updateTaxableIncome);
+       document.getElementById('deduction-16ii').addEventListener('input', updateTaxableIncome);
+       document.getElementById('deduction-16iii').addEventListener('input', updateTaxableIncome);
+       document.getElementById('income-self-occupied').addEventListener('input', updateTaxableIncome);
+       document.getElementById('income-let-out').addEventListener('input', updateTaxableIncome);
+       document.getElementById('income-capital-gains').addEventListener('input', updateTaxableIncome);
+       document.getElementById('income-44ad').addEventListener('input', updateTaxableIncome);
+       document.getElementById('income-other-profession').addEventListener('input', updateTaxableIncome);
+       document.getElementById('Other Interest Incomes').addEventListener('input', updateTaxableIncome);
+       document.getElementById('Winning from Lottery, crossword puzzles etc.s').addEventListener('input', updateTaxableIncome);
+       document.getElementById('Income from Other Sources').addEventListener('input', updateTaxableIncome);
+       document.getElementById('tax-regime').addEventListener('change', function() {
+           const taxRegime = this.value;
+           if (taxRegime === 'new-regime') {
+               toggleDeductions(true);
+           } else {
+               toggleDeductions(false);
+           }
+           updateTaxableIncome();  // Update taxable income when regime changes
+       });
+       document.getElementById('tax-form').addEventListener('submit', calculateTax);
+       
+        
 
 
     </script>
